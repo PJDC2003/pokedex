@@ -1,77 +1,45 @@
-# Trilha JS Developer - Pokedex
-Inspiração: https://dribbble.com/shots/6540871-Pokedex-App
+# Pokedex
 
-https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/
---> backgrounds svg gratuitos
+## Description
 
-INTRODUÇÃO A APIs
-API --> servidor que fornece dados
+This repository is a Pokedex application inspired by the design found on Dribbble. The project showcases the use of APIs to fetch and display information about Pokémon.
 
-Como funcionam as requisições --> inspecionar - network - reload page
-É possível ver request URL, request method (GET p.e.) e status code (200-299 é sucesso)
-GET significa que foram pedidas informações ao request URL e foram enviadas com sucesso
+## Features
 
-Requisição HTTP
+- Display a list of Pokémon.
+- Show details of individual Pokémon.
+- Search for Pokémon.
 
-URL: https://pokeapi.co/api/v2/pokemon
-     ${Endereço}/${path} --> caminho de identificação do recurso
+## Technologies Used
 
-        Endereço IP: https://pokeapi.co é semelhante a http://127.0.0.1:300
+- JavaScript
+- Fetch API for HTTP requests
+- HTML and CSS for the application's structure and styling
 
-        path: /api/v2/pokemon
+## API Used
 
-Path params: https://pokeapi.co/api/v2/pokemon/{id} (id: identificação do recurso)
-        
-Query String: a seguir a ?, caso tenha, estrutura chave:valor
-Ex: https://pokeapi.co/api/v2/pokemon?type=name&name=i
+The application utilizes [PokeAPI](https://pokeapi.co/api/v2/pokemon) to fetch data about Pokémon. The API supports read operations with the `GET` method.
 
-Request Method (o que quero fazer com o recurso): GET (buscar) | POST (inserir) | PUT (atualizar) | DELETE (remover) | PATCH
+### Example Request
 
-Response Headers --> servidor
-Request Headers --> o que cliente pede, neste caso browser.
+To fetch information about a specific Pokémon, you can make a request to:
 
-Accept (o que aceitamos): image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+```
+https://pokeapi.co/api/v2/pokemon/{id}
+```
 
-Accept-Language:
-en-GB,en;q=0.9,  (q = prioridade)
-pt-PT;q=0.8,
-pt;q=0.7
+Replace `{id}` with the Pokémon's identifier.
 
-O que realmente recebemos: Content-Type: image/svg+xml
+## Setup and Usage
 
-==============
-Exemplo com post
+1. Clone the repository:
+    ```bash
+    git clone <repository-url>
+    ```
 
-Request Headers
-    content-type: application/json
+2. Navigate to the project directory:
+    ```bash
+    cd pokedex
+    ```
 
-Body --> corpo da requisição   (com o get não há body no request headers)
-{
-    "name":"teste"
-}
-======
-
-Resumindo: Requisição HTTP
-
-- URL
-- Request Method
-- Request Headers
-- Request Body  ---> até aqui compus uma requisição, mandei para o servidor, que vai processar e devolve um status code
-- Status Code       (200 - ok)   https://httpstatusdogs.com/
-- Response Headers  (como a resposta está configurada)
-- Response Body     (resposta em si, não obrigatório)
-
-
-
-Requisição HTTP via javaScript --> existem várias formas mas é mais fácil é utilizar a biblioteca Fetch API
-
-**Códigos GIT**
-git --help
-git clone <url>
-git status --> arquivos modificados
-git add ./ --> changes to be committed
-git commit -m "Adição de modificações" --> modificações salvas no repositório local
-git log --oneline  --> ver modificações
-git remote -v
-git branch --> ver branch atual
-git push origin <branch>  --> guardar no repositório global
+3. Open the `index.html` file in a web browser to view the application.
